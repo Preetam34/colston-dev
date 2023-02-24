@@ -1,5 +1,5 @@
 .main_header {
-    padding: 12px 30px;
+    /* padding: 12px 30px; */
   }
   
   .main_header .nav-item.dropdown {
@@ -12,7 +12,9 @@
   
   .main_header .navbar-expand-lg .navbar-nav .nav-link {
     margin: 0px 20px 0px 0px;
-    font-size: 16px;
+    font-family: 'Montserrat';
+    text-transform: capitalize;
+    font-size: 18px;
     font-weight: 400;
     padding: 8px 16px;
   }

@@ -53,11 +53,25 @@ const Header = () => {
     (state) => state?.menuList?.getMenuOptionsData?.categoryList
   );
 
+  const [show, setShow] = useState("");
+  const showDropdown = (id) => {
+    setShow(id);
+  };
+  const hideDropdown = () => {
+    setShow("");
+  };
+
   return (
     <>
       <Grid style={{ ...HeaderStyle.headerFullStyle }}>
         <Row style={{ ...HeaderStyle.topHeader }}>
-          <Col style={{ display: "flex", alignItems: "center", padding: "8px 3.125rem" }}>
+          <Col
+            style={{
+              display: "flex",
+              alignItems: "center",
+              padding: "8px 3.125rem",
+            }}
+          >
             <FMTypography
               displayText={"Colston World"}
               sx={{
@@ -115,9 +129,7 @@ const Header = () => {
           </Col>
         </Row>
 
-        <Row>
-
-
+        <Row style={{ display: "flex", alignItems: "baseline" }}>
           <Col
             style={{
               ...commonStyle.flexDisplayStyle,
@@ -133,7 +145,65 @@ const Header = () => {
             </div>
           </Col>
 
-          <Col
+          <Col style={{ ...commonStyle.flexDisplayStyle }}>
+            <div className="main_header">
+              <Navbar bg="" expand="lg" className="p-0">
+                <Container fluid>
+                  <Navbar.Toggle aria-controls="navbarScroll" />
+                  <Navbar.Collapse id="navbarScroll">
+                    <Nav className="" navbarScroll>
+                      {accountDetailData?.map((elem) => {
+                        return (
+                          <NavDropdown
+                            title={elem?.name}
+                            key={elem?.id}
+                            id="navbarScrollingDropdown"
+                            onMouseEnter={() => showDropdown(elem?._id)}
+                            onMouseLeave={hideDropdown}
+                            show={show === elem?._id}
+                          >
+                            <Row
+                              className="rowOnHover"
+                              style={{ padding: "2rem" }}
+                            >
+                              {elem?.children?.map((secElem) => (
+                                <Col md={3}>
+                                  <div className="cate_area">
+                                    <h3>{secElem?.name}</h3>
+
+                                    {secElem?.children?.map((thirdElem) => (
+                                      <NavDropdown.Item href="/">
+                                        {thirdElem?.name}
+                                      </NavDropdown.Item>
+                                    ))}
+                                  </div>
+                                </Col>
+                              ))}
+
+                              <Col md={3}>
+                                <div className="cate_list_menu">
+                                  <a href="/">
+                                    <img
+                                      src={elem?.categoryImage}
+                                      className="img-fluid"
+                                      alt=""
+                                    />
+                                    {/* <h4>Cakes</h4> */}
+                                  </a>
+                                </div>
+                              </Col>
+                            </Row>
+                          </NavDropdown>
+                        );
+                      })}
+                    </Nav>
+                  </Navbar.Collapse>
+                </Container>
+              </Navbar>
+            </div>
+          </Col>
+
+          <Col 
             style={{
               ...commonStyle.flexDisplayStyle,
               justifyContent: "flex-end",
@@ -143,8 +213,6 @@ const Header = () => {
           >
             <SearchBar placeholder={"Search"} />
           </Col>
-
-
         </Row>
       </Grid>
     </>

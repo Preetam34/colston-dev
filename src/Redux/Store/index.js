@@ -7,8 +7,10 @@ import authReducer from "../Slices/Login/auth.slice";
 import resetPasswordSlice from "../Slices/Login/resetPasswordLink";
 import passwordSetup from "../Slices/Login/setupPassword";
 
-const rootReducer = combineReducers({
+import menuListSlice from "../Slices/HeaderMenuList/HeaderMenuListSlice";
 
+const rootReducer = combineReducers({
+  menuList: menuListSlice,
   auth: authReducer,
   resetPassword: resetPasswordSlice,
   passwordSetup: passwordSetup,
