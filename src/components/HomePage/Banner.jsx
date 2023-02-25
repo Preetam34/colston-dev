@@ -8,6 +8,12 @@ import homepageBanner1 from "../../assets/homebanner1.jpg";
 import homepageBanner2 from "../../assets/homebanner2.jpg";
 import homepageBanner3 from "../../assets/homebanner3.jpg";
 
+
+
+
+
+
+
 const Banner = () => {
   const [bannerdata, setBannerData] = useState(BData);
 
@@ -40,7 +46,9 @@ const Banner = () => {
             <div className="banner_img">
               <img src={homepageBanner3} className="img-fluid" alt="" />
             </div>
-            
+          
+
+
             {/* {bannerdata.map((bd, i) => (
                             <div className='banner_img' key={bd.id}> 
                                 <img src={bd.thumbnailUrl} className='img-fluid' alt="" /> 

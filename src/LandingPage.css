@@ -81,3 +81,16 @@
   width: 1904px !important;
 }
 /* close css for banner slider section */
+
+
+
+/* home page animation slider*/
+
+.image-slideshow {
+  width: 100%;
+  height: auto;
+  box-shadow: inset -300px 0px 100px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+}
+
+/* close home page animation slider*/

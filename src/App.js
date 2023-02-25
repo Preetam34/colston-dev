@@ -9,7 +9,12 @@ import './App.css'
 import theme from "./theme";
 import {
   LANDING_PAGE,
+  PRIVACY_POLICY,
+
 } from "Routes/Routes";
+import PrivacyPolicy from "container/PrivacyPolicy";
+
+
 
 
 //import PrivateRoutes from "Routes/PrivateRoutes";
@@ -22,6 +27,7 @@ const App = () => {
           <Routes>
             <Route index element={<LandingPage />} />
 
+            <Route path={PRIVACY_POLICY} element = {<PrivacyPolicy />} />
 
             {/* private routes below */}
 

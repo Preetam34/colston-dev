@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import {
   Avatar,
@@ -30,6 +30,7 @@ import SearchIcon from "../../assets/SearchIcon.svg";
 
 import { getMenuBarList } from "Redux/Slices/HeaderMenuList/HeaderMenuListSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { LANDING_PAGE } from "Routes/Routes";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -64,7 +65,7 @@ const Header = () => {
   return (
     <>
       <Grid style={{ ...HeaderStyle.headerFullStyle }}>
-        <Row style={{ ...HeaderStyle.topHeader, margin:"0" }}>
+        <Row style={{ ...HeaderStyle.topHeader, margin: "0" }}>
           <Col
             style={{
               display: "flex",
@@ -129,20 +130,22 @@ const Header = () => {
           </Col>
         </Row>
 
-        <Row style={{ display: "flex", alignItems: "baseline", margin:"0" }}>
+        <Row style={{ display: "flex", alignItems: "baseline", margin: "0" }}>
           <Col
             style={{
               ...commonStyle.flexDisplayStyle,
               padding: "27px 3.125rem",
             }}
           >
-            <div style={{}}>
-              <img
-                src={ColstonLogo}
-                alt="ColstonLogo"
-                style={{ ...HeaderStyle.imageStyle }}
-              />
-            </div>
+            <Link to={LANDING_PAGE}>
+              <div style={{}}>
+                <img
+                  src={ColstonLogo}
+                  alt="ColstonLogo"
+                  style={{ ...HeaderStyle.imageStyle }}
+                />
+              </div>
+            </Link>
           </Col>
 
           <Col style={{ ...commonStyle.flexDisplayStyle }}>
@@ -203,7 +206,7 @@ const Header = () => {
             </div>
           </Col>
 
-          <Col 
+          <Col
             style={{
               ...commonStyle.flexDisplayStyle,
               justifyContent: "flex-end",
