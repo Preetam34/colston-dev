@@ -1,0 +1,83 @@
+/* start css for banner slider section */
+.banner_slider {
+  /* padding: 0 100px; */
+  margin-top: 0px;
+}
+
+.banner_slider .banner_img.slick-slide {
+  position: relative;
+  overflow: hidden;
+}
+
+.banner_slider .banner_img.slick-slide::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000021;
+  content: "";
+}
+
+.banner_slider .banner_img.slick-slide img {
+  width: 100%;
+  height: 660px;
+  margin: 0;
+  object-fit: cover;
+}
+
+.banner_slider .slick-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.banner_slider .slick-dots li button:before {
+  font-size: 13px;
+  color: transparent;
+  border: 1px solid white;
+  border-radius: 100px;
+  opacity: 1;
+}
+
+.banner_slider .slick-dots li.slick-active button:before {
+  color: #ffffff;
+}
+
+.banner_slider .banner_img .banner_content {
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  width: 45%;
+  transform: translateY(-50%);
+}
+.banner_slider .banner_img .banner_content h3 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: capitalize;
+  margin: 0;
+  padding: 0;
+}
+.banner_slider .banner_img .banner_content p {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+  padding: 15px 0;
+}
+.banner_slider .banner_img .banner_content a {
+  border: 1px solid #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  padding: 10px 25px;
+  font-size: 1.875rem;
+  display: inline-block;
+  color: #fff;
+}
+
+.slick-slide .slick-active .banner_img {
+  width: 1904px !important;
+}
+/* close css for banner slider section */

@@ -64,7 +64,7 @@ const Header = () => {
   return (
     <>
       <Grid style={{ ...HeaderStyle.headerFullStyle }}>
-        <Row style={{ ...HeaderStyle.topHeader }}>
+        <Row style={{ ...HeaderStyle.topHeader, margin:"0" }}>
           <Col
             style={{
               display: "flex",
@@ -129,7 +129,7 @@ const Header = () => {
           </Col>
         </Row>
 
-        <Row style={{ display: "flex", alignItems: "baseline" }}>
+        <Row style={{ display: "flex", alignItems: "baseline", margin:"0" }}>
           <Col
             style={{
               ...commonStyle.flexDisplayStyle,

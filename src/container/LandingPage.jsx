@@ -1,11 +1,15 @@
 import Header from "components/SearchBar/Header";
 import React from "react";
+import Banner from "../components/HomePage/Banner";
+
 
 const LandingPage = () => {
   return (
     <>
       <Header />
-      <div className="my-5">Welcome to Colston</div>
+      <div>
+        <Banner />
+      </div>
     </>
   );
 };
