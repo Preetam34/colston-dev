@@ -82,8 +82,6 @@
 }
 /* close css for banner slider section */
 
-
-
 /* home page animation slider*/
 
 .image-slideshow {
@@ -93,4 +91,282 @@
   border-radius: 20px;
 }
 
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+section .text-container {
+  display: flex;
+}
+section .text-container .text-box {
+  margin: 20px;
+  padding: 20px;
+}
+
+@media (max-width: 900px) {
+  section .text-container {
+    flex-direction: column;
+  }
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 /* close home page animation slider*/
+
+@keyframes slidein-right {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* start css for best seller section */
+
+.slick-slide a {
+  text-decoration: none;
+  position: relative;
+}
+/* .slick-slide img {
+  width: 200px;
+  height: 250px;
+  border-radius: 104px;
+  object-fit: cover;
+  margin: 0 35px 0;
+} */
+.slick-slide h4 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 10px 0 0;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #820408;
+  font-size: 1.875rem;
+}
+.slick-prev:before {
+  content: "\f053";
+  font-family: "FontAwesome";
+}
+
+.slick-next:before {
+  content: "\f054";
+  font-family: "FontAwesome";
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 9;
+  width: auto;
+  background-color: #ffffff;
+  height: auto;
+  border-radius: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0px 0px 17px -10px #00000082;
+}
+
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  background-color: #fff;
+}
+.slick-prev {
+  left: 17px;
+  padding: 15px 20px 13px 15px;
+}
+
+.slick-next {
+  padding: 15px 15px 13px 20px;
+  right: 20px;
+}
+
+.bestseller {
+  padding: 0px 252px 0;
+}
+.heading_text h3 {
+  text-align: center;
+  font-family: 'Montserrat';
+  font-size: 2.1875rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0 0 35px;
+}
+.samecard .slick-slide img {
+  width: 307px;
+  height: 321px;
+  border-radius: 20px;
+  object-fit: cover;
+  margin: 0 20px 0;
+}
+.samecard .slick-prev {
+  left: 0;
+}
+.samecard .slick-next {
+  right: -20px;
+}
+.samecard .slick-slide a {
+  display: grid;
+}
+/* .samecard .slick-slide .card_name {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+} */
+.samecard .slick-slide .card_name h4 {
+  color: #222222;
+  padding: 16px 0px 0px 0px;
+  font-weight: 400;
+  font-size: 20px;
+}
+/* .samecard .slick-slide .card_name p {
+  color:#222222;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 300;
+} */
+
+/* close css for best seller section */
+
+/* start css for shop by occasions section */
+.shopbyocca {
+  padding: 0px 257px 0;
+}
+.shopbyocca img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.shopbyocca .twobandata {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 100px;
+  text-align: center;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+.shopbyocca .twobandata h4 {
+  font-size: 3.125rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: capitalize;
+  padding: 0 0 25px;
+  margin: 0;
+  padding: 0;
+}
+.shopbyocca .twobandata a {
+  border: 1px solid #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  padding: 10px 45px;
+  font-size: 1.5rem;
+  display: inline-block;
+  color: #fff;
+}
+.overlay::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  left: 0;
+  top: 0;
+  /* background-color: #00000040; */
+}
+.shopbyocca .heighautoimg a {
+  position: relative;
+  overflow: hidden;
+  /* margin-bottom: 25px; */
+  display: block;
+}
+.shopbyocca .heighautoimg a img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.shopbyocca .heighautoimg a p {
+  position: absolute;
+
+  left: 50%;
+  top: 97%;
+  bottom: 0%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  color: #fff;
+  font-family: 'Montserrat';
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+
+
+  background: linear-gradient(
+    180deg,
+    rgba(34, 34, 34, 0) 0%,
+    rgba(34, 34, 34, 0.79) 33.71%
+  );
+  border-radius: 0px;
+  width: 333px;
+  height: 72px;
+
+}
+
+.shopbyocca .heighautoimg2 a {
+  position: relative;
+  overflow: hidden;
+  /* margin-bottom: 25px; */
+  display: block;
+}
+.shopbyocca .heighautoimg2 a img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.shopbyocca .heighautoimg2 a p  {
+  position: absolute;
+
+  left: 50%;
+  top: 98%;
+  bottom: 0%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  color: #fff;
+  font-family: 'Montserrat';
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+
+  background: linear-gradient(
+    180deg,
+    rgba(34, 34, 34, 0) 0%,
+    rgba(34, 34, 34, 0.79) 33.71%
+  );
+  border-radius: 0px;
+  width: 233px;
+  height: 72px;
+
+}
+
+
+
+
+/* close css for shop by occasions section */

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { LOGIN } from "Routes/Routes";
+import { LANDING_PAGE } from "Routes/Routes";
 import { setItem } from "./commonService";
 
 const axiosInstance = axios.create({
@@ -27,9 +27,9 @@ axiosInstance.interceptors.response.use(
     return response;
   },
   function (error) {
-    if (error.response.status === 401 && window.location.pathname !== LOGIN) {
+    if (error.response.status === 401 && window.location.pathname !== LANDING_PAGE) {
       window.localStorage.clear();
-      window.location.replace(LOGIN);
+      window.location.replace(LANDING_PAGE);
       window.location.reload();
     }
     return Promise.reject(error);

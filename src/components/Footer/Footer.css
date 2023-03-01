@@ -1,0 +1,17 @@
+
+.footer-title {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: 'Montserrat';
+    padding-bottom: 20px;
+}
+
+.footer-content {
+    color: #717171;
+    font-weight: 400;
+    font-size: 16px;
+    padding-bottom: 18px;
+    font-family: 'Montserrat';
+}
