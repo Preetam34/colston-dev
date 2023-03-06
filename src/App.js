@@ -8,17 +8,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./LandingPage.css";
-import './App.css'
+import "./App.css";
 import theme from "./theme";
 import {
   LANDING_PAGE,
   PRIVACY_POLICY,
-  PRODUCT_PAGE
-
+  PRODUCT_PAGE,
+  PRODUCT_DETAIL,
 } from "Routes/Routes";
-
-
-
+import ProductDetail from "container/ProductDetail/ProductDetail";
 
 const App = () => {
   return (
@@ -28,15 +26,22 @@ const App = () => {
           <Routes>
             <Route index element={<LandingPage />} />
 
-            <Route path={PRIVACY_POLICY} element = {<PrivacyPolicy />} />
-
             {/* private routes below */}
 
-           <Route
+            <Route
               path={PRODUCT_PAGE}
               element={<PrivateRoutes Component={ProductPage} />}
-            /> 
+            />
 
+            <Route
+              path={PRODUCT_DETAIL}
+              element={<PrivateRoutes Component={ProductDetail} />}
+            />
+
+            <Route
+              path={PRIVACY_POLICY}
+              element={<PrivateRoutes Component={PrivacyPolicy} />}
+            />
 
             <Route path="*" element={<p>There's nothing here: 404!</p>} />
           </Routes>
@@ -45,7 +50,5 @@ const App = () => {
     </>
   );
 };
-
-
 
 export default App;

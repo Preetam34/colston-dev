@@ -28,7 +28,7 @@ import WaterClosets from "assets/homepage/WaterClosets.png";
 
 import BasinSanitarywares from "assets/homepage/BasinSanitarywares.png";
 
-import Footer from "components/Footer/Footer";
+import Footer from "components/Footer";
 
 const LandingPage = () => {
   function reveal() {

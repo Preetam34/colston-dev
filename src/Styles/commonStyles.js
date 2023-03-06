@@ -83,6 +83,7 @@ export const commonStyle = {
     textTransform: "none",
     "&:hover": {
       backgroundColor: "#801317",
+      
     },
   },
   textTransformStyle: {
