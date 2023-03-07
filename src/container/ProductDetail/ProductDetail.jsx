@@ -37,10 +37,13 @@ import productDetail from "../../constants/productDetail";
 
 import SimilarProduct from "./SimilarProduct";
 import Footer from "../../components/Footer";
+import Form from "./Form";
 const ProductDetail = () => {
   const dispatch = useDispatch();
   const params = useParams();
   //  const { pId } = params;
+
+  const [open, setOpen] = useState(false);
 
   const {
     register,
@@ -119,6 +122,8 @@ const ProductDetail = () => {
     let pId = element?._id;
     navigate(`/product-detail/${pId}`);
   };
+
+  const handleOpen = () => setOpen(true);
   return (
     <>
       <Header />
@@ -404,7 +409,10 @@ const ProductDetail = () => {
 
       {/* moere suggestions */}
       <SimilarProduct />
-      <Footer/>
+
+      <Form />
+
+      <Footer />
     </>
   );
 };

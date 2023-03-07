@@ -30,23 +30,31 @@ export const commonStyle = {
     flexDirection: "column",
   },
   inputFieldStyle: {
-    width: "100%",
-    height: "2.75rem",
-    padding: "1rem",
-    marginTop: "0.5rem",
-    marginBottom: "0.375rem",
-    border: `0.063rem solid grey`,
-    boxSizing: "border-box",
-    boxShadow: "0rem 0.25rem 0.5rem rgba(0,0,0,0.04)",
-    borderRadius: "0.5rem",
+    width: "265px",
+    height: "52px",
+    border: "1px solid #E6E6E6",
+    borderRadius: "10px",
+    marginBottom: "15px",
     color: "black",
+    fontFamily: "Montserrat",
+    fontStyle: "normal",
+    fontWeight: "400",
+    paddingLeft: "20px",
+    fontSize: "16px",
     "& .MuiOutlinedInput-notchedOutline": {
       border: "none",
       color: "black",
     },
     "&::placeholder": {
-      color: "black",
-      opacity: 1,
+      fontFamily: "Montserrat",
+      fontStyle: "normal",
+      fontWeight: "400",
+      fontSize: "16px",
+      lineHeight: "20px",
+      paddingLeft: "20px",
+      /* identical to box height */
+      color: "#B4B4B4",
+      opacity: "1",
     },
   },
   errorStyle: {
@@ -83,7 +91,6 @@ export const commonStyle = {
     textTransform: "none",
     "&:hover": {
       backgroundColor: "#801317",
-      
     },
   },
   textTransformStyle: {
