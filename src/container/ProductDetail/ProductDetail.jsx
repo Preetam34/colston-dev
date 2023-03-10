@@ -124,6 +124,11 @@ const ProductDetail = () => {
   };
 
   const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+
+
+
   return (
     <>
       <Header />
@@ -346,7 +351,9 @@ const ProductDetail = () => {
                       border: "1px solid #222",
                       backgroundColor: "white",
                     },
+   
                   }}
+                  onClick={(handleOpen)}
                 />
 
                 <FMButton
@@ -410,7 +417,7 @@ const ProductDetail = () => {
       {/* moere suggestions */}
       <SimilarProduct />
 
-      <Form />
+      <Form open={open} handleClose={handleClose} />
 
       <Footer />
     </>

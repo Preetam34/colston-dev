@@ -34,11 +34,7 @@ const style = {
   borderRadius: "20px",
 };
 
-export default function Form() {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
+export default function Form({ open, handleClose }) {
   const [passwordType, setPasswordType] = useState(true);
 
   const {
@@ -54,11 +50,12 @@ export default function Form() {
     setPasswordType(!passwordType);
   };
 
-  const onSubmit = (data) => {};
+  const onSubmit = (data) => {
+    console.log("form submit");
+  };
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -86,143 +83,147 @@ export default function Form() {
                 padding: "0px 40px 0px 40px",
               }}
             >
-              <Row>
-                <Col
-                  md={12}
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    padding: "35px 40px",
-                  }}
-                >
-                  <FMTypography
-                    displayText="Enquiry"
-                    styleData={commonStyle.headingStyle}
-                  />
-                  <div onClick={handleClose} style={{cursor:"pointer"}}>
-                    <img src={Cross} alt="x" />
-                  </div>
-                </Col>
-                <Col md={6}>
-                  <InputBase
-                    required
-                    id="Name"
-                    name="Name"
-                    placeholder="Name"
-                    sx={{
-                      ...commonStyle.inputFieldStyle,
-                      ...(errors.name && commonStyle.errorStyle),
+              <Box component="form" xs={12}>
+                <Row>
+                  <Col
+                    md={12}
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      padding: "35px 40px",
                     }}
-                    {...register("Name")}
-                    error={errors.name ? true : false}
-                  />
-                  <FMTypography
-                    styleData={{ ...commonStyle.errorText, fontSize: "11px" }}
-                    displayText={errors.name?.message}
-                  />
-                </Col>
-                <Col md={6}>
-                  <InputBase
-                    required
-                    id="email"
-                    name="email"
-                    placeholder="Email"
-                    sx={{
-                      ...commonStyle.inputFieldStyle,
-                      ...(errors.email && commonStyle.errorStyle),
-                    }}
-                    {...register("email")}
-                    error={errors.email ? true : false}
-                  />
-                  <FMTypography
-                    styleData={{ ...commonStyle.errorText, fontSize: "11px" }}
-                    displayText={errors.name?.message}
-                  />
-                </Col>
-                <Col md={6}>
-                  <InputBase
-                    required
-                    id="mobileNo"
-                    name="mobileNo"
-                    placeholder="Mobile Number"
-                    sx={{
-                      ...commonStyle.inputFieldStyle,
-                      ...(errors.mobileNo && commonStyle.errorStyle),
-                    }}
-                    {...register("mobileNo")}
-                    error={errors.mobileNo ? true : false}
-                  />
-                  <FMTypography
-                    styleData={{ ...commonStyle.errorText, fontSize: "11px" }}
-                    displayText={errors.mobileNo?.message}
-                  />
-                </Col>
-                <Col md={6}>
-                  <InputBase
-                    required
-                    id="subject"
-                    name="subject"
-                    placeholder="Subject"
-                    sx={{
-                      ...commonStyle.inputFieldStyle,
-                      ...(errors.subject && commonStyle.errorStyle),
-                    }}
-                    {...register("subject")}
-                    error={errors.subject ? true : false}
-                  />
-                  <FMTypography
-                    styleData={{ ...commonStyle.errorText, fontSize: "11px" }}
-                    displayText={errors.subject?.message}
-                  />
-                </Col>
-                <Col md={12}>
-                  <InputBase
-                    required
-                    id="description"
-                    name="description"
-                    placeholder="Description"
-                    sx={{
-                      ...commonStyle.inputFieldStyle,
-                      ...(errors.description && commonStyle.errorStyle),
-                      width: "555px",
-                      height: "165px",
-                      border: "1px solid #E6E6E6",
-                      borderRadius: "10px",
-                    }}
-                    {...register("description")}
-                    error={errors.description ? true : false}
-                  />
-                  <FMTypography
-                    styleData={{ ...commonStyle.errorText, fontSize: "11px" }}
-                    displayText={errors.description?.message}
-                  />
-                </Col>
-                <Col style={{ paddingBottom: "40px" }}>
-                  <FMButton
-                    displayText={"Submit"}
-                    variant="outlined"
-                    styleData={{
-                      fontFamily: "Montserrat",
-                      fontStyle: "normal",
-                      fontWeight: "600",
-                      fontSize: "16px",
-                      lineHeight: "20px",
-                      background: "#222",
-                      width: "125px",
-                      height: "52px",
+                  >
+                    <FMTypography
+                      displayText="Enquiry"
+                      styleData={commonStyle.headingStyle}
+                    />
+                    <div onClick={handleClose} style={{ cursor: "pointer" }}>
+                      <img src={Cross} alt="x" />
+                    </div>
+                  </Col>
+                  <Col md={6}>
+                    <InputBase
+                      required
+                      id="name"
+                      name="name"
+                      placeholder="Name"
+                      sx={{
+                        ...commonStyle.inputFieldStyle,
+                        ...(errors.name && commonStyle.errorStyle),
+                      }}
+                      {...register("name")}
+                      error={errors.name ? true : false}
+                    />
+                    <FMTypography
+                      styleData={{ ...commonStyle.errorText, fontSize: "11px" }}
+                      displayText={errors.name?.message}
+                    />
+                  </Col>
+                  <Col md={6}>
+                    <InputBase
+                      required
+                      id="email"
+                      name="email"
+                      placeholder="Email"
+                      sx={{
+                        ...commonStyle.inputFieldStyle,
+                        ...(errors.email && commonStyle.errorStyle),
+                      }}
+                      {...register("email")}
+                      error={errors.email ? true : false}
+                    />
+                    <FMTypography
+                      styleData={{ ...commonStyle.errorText, fontSize: "11px" }}
+                      displayText={errors.email?.message}
+                    />
+                  </Col>
+                  <Col md={6}>
+                    <InputBase
+                      required
+                      id="mobileNo"
+                      name="mobileNo"
+                      placeholder="Mobile Number"
+                      sx={{
+                        ...commonStyle.inputFieldStyle,
+                        ...(errors.mobileNo && commonStyle.errorStyle),
+                      }}
+                      {...register("mobileNo")}
+                      error={errors.mobileNo ? true : false}
+                    />
+                    <FMTypography
+                      styleData={{ ...commonStyle.errorText, fontSize: "11px" }}
+                      displayText={errors.mobileNo?.message}
+                    />
+                  </Col>
+                  <Col md={6}>
+                    <InputBase
+                      required
+                      id="subject"
+                      name="subject"
+                      placeholder="Subject"
+                      sx={{
+                        ...commonStyle.inputFieldStyle,
+                        ...(errors.subject && commonStyle.errorStyle),
+                      }}
+                      {...register("subject")}
+                      error={errors.subject ? true : false}
+                    />
+                    <FMTypography
+                      styleData={{ ...commonStyle.errorText, fontSize: "11px" }}
+                      displayText={errors.subject?.message}
+                    />
+                  </Col>
+                  <Col md={12}>
+                    <InputBase
+                      required
+                      id="description"
+                      name="description"
+                      placeholder="Description"
+                      sx={{
+                        ...commonStyle.inputFieldStyle,
+                        ...(errors.description && commonStyle.errorStyle),
+                        width: "555px",
+                        height: "165px",
+                        border: "1px solid #E6E6E6",
+                        borderRadius: "10px",
+                      }}
+                      {...register("description")}
+                      error={errors.description ? true : false}
+                    />
+                    <FMTypography
+                      styleData={{ ...commonStyle.errorText, fontSize: "11px" }}
+                      displayText={errors.description?.message}
+                    />
+                  </Col>
+                  <Col style={{ paddingBottom: "40px" }}>
+                    <FMButton
+                      displayText={"Submit"}
+                      variant="outlined"
+                      styleData={{
+                        fontFamily: "Montserrat",
+                        fontStyle: "normal",
+                        fontWeight: "600",
+                        fontSize: "16px",
+                        lineHeight: "20px",
+                        background: "#222",
+                        width: "125px",
+                        height: "52px",
 
-                      borderRadius: "10px",
+                        borderRadius: "10px",
 
-                      /* identical to box height */
-                      color: "#FFFFFF",
-                      "&:hover": {
-                        border: "1px solid #222",
-                        backgroundColor: "white",
-                      },
-                    }}
-                  />
-                </Col>
-              </Row>
+                        /* identical to box height */
+                        color: "#FFFFFF",
+                        "&:hover": {
+                          border: "1px solid #222",
+                          color: "black",
+                          backgroundColor: "white",
+                        },
+                      }}
+                      onClick={handleSubmit(onSubmit)}
+                    />
+                  </Col>
+                </Row>
+              </Box>
             </Container>
           </Box>
         </Fade>

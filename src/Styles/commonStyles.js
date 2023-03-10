@@ -69,7 +69,7 @@ export const commonStyle = {
     color: "red",
     height: "1.25rem",
     fontSize: "0.875rem",
-    marginTop: "0.375rem",
+    paddingBottom: "30px",
   },
 
   paddingZero: {
