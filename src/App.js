@@ -15,9 +15,12 @@ import {
   PRIVACY_POLICY,
   PRODUCT_PAGE,
   PRODUCT_DETAIL,
+  BRAND_PAGE,
+  BRAND_PAGE_ID
 } from "Routes/Routes";
 import ProductDetail from "container/ProductDetail/ProductDetail";
-
+import BrandPage from "container/BrandPage";
+import BrandDetail from "container/BrandDetail"
 const App = () => {
   return (
     <>
@@ -41,6 +44,15 @@ const App = () => {
             <Route
               path={PRIVACY_POLICY}
               element={<PrivateRoutes Component={PrivacyPolicy} />}
+            />
+
+            <Route
+              path={BRAND_PAGE}
+              element={<PrivateRoutes Component={BrandPage} />}
+            />
+            <Route
+              path={BRAND_PAGE_ID}
+              element={<PrivateRoutes Component={BrandDetail} />}
             />
 
             <Route path="*" element={<p>There's nothing here: 404!</p>} />

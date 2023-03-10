@@ -40,7 +40,22 @@ const ProductPage = () => {
   return (
     <>
       <Header />
-
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "40px",
+        }}
+      >
+        <FMTypography
+          displayText={"Water Whirlphool"}
+          styleData={{
+            fontWeight: "600",
+            fontSize: "40px",
+            textAlign: "center",
+          }}
+        />
+      </Box>
 
       <Grid sx={{ padding: "50px 50px" }}>
         {/* product box below */}
@@ -58,7 +73,11 @@ const ProductPage = () => {
                 <CardActionArea>
                   <CardMedia
                     component="img"
-                    sx={{ borderRadius: "20px",height:"317px",width:"317px" }}
+                    sx={{
+                      borderRadius: "20px",
+                      height: "317px",
+                      width: "317px",
+                    }}
                     image={elem?.img}
                     alt="green iguana"
                   />
@@ -88,7 +107,8 @@ const ProductPage = () => {
 
 export default ProductPage;
 
-{/* <div>
+{
+  /* <div>
 <Container fluid className="p-0 m-0">
   <Row style={{ margin: "0" }}>
     <Col md={12}>
@@ -136,4 +156,5 @@ export default ProductPage;
     </Col>
   </Row>
 </Container>
-</div> */}
+</div> */
+}
