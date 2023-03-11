@@ -1,26 +1,41 @@
 .cardText {
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
   padding-top: 16px;
   text-align: center;
-    color: #222222;
-  }
-  
-  .css-13k8m9o-MuiPaper-root-MuiCard-root{
-      box-shadow: none !important;
-  }
-  
-  
-  .MuiCardContent-root{
-      padding-top: 16px;
-      text-align: center;
-  }
-  
-  
-  .css-46bh2p-MuiCardContent-root{
-      padding-top: 16px;
-      text-align: center;
-  }
+  color: #222222;
+}
+
+.css-13k8m9o-MuiPaper-root-MuiCard-root {
+  box-shadow: none !important;
+}
+
+.MuiCardContent-root {
+  padding-top: 16px;
+  text-align: center;
+}
+
+.css-46bh2p-MuiCardContent-root {
+  padding-top: 16px;
+  text-align: center;
+}
+
+.zoomin {
+  border-radius: 20px;
+  width: 430px;
+  height: 295px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.zoomin img {
+  width: 100%;
+  transition: 0.5s all ease-in-out;
+}
+
+.zoomin:hover img {
+  transform: scale(1.1);
+}

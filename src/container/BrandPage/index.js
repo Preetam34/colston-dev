@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import Header from "components/SearchBar/Header";
-import { Row, Col, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import {
   Box,
@@ -12,8 +11,6 @@ import {
   Typography,
 } from "@mui/material";
 import FMTypography from "components/FMTypography/FMTypography";
-
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import brandProduct from "../../constants/brandProduct";
 import brandColston from "../../assets/brandColston/BrandColston.png";
@@ -26,7 +23,7 @@ const BrandPage = () => {
 
   const onCardClick = (element) => {
     let pId = element?._id;
-   navigate(`/brand-page/${pId}`);
+    navigate(`/brand-page/${pId}`);
   };
 
   return (
@@ -78,16 +75,29 @@ const BrandPage = () => {
             <Box onClick={() => onCardClick(elem)}>
               <Card sx={{ width: "317", borderRadius: "20px" }}>
                 <CardActionArea>
-                  <CardMedia
+                <div class="zoomin">
+                    <img
+                      src={elem?.img}
+                      alt="img"
+                    />
+                  </div>
+                  {/* <CardMedia
                     component="img"
                     sx={{
                       borderRadius: "20px",
                       width: "430px",
                       height: "295px",
+                      overflow: "hidden",
+                      margin: "0 auto",
+                      transition: "0.5s all ease-in-out",
+                      "&:hover": {
+                        transform: "scale(1.1)",
+                      },
                     }}
                     image={elem?.img}
                     alt="green iguana"
-                  />
+                  /> */}
+
                   <CardContent>
                     <Typography
                       gutterBottom

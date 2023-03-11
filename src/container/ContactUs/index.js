@@ -80,7 +80,7 @@ const ContactUs = () => {
                     ...commonStyle.inputFieldContactStyle,
                     ...(errors.name && commonStyle.errorContactStyle),
                   }}
-                  {...register("name")}
+          //        {...register("name")}
                   error={errors.name ? true : false}
                 />
                 <FMTypography
@@ -101,7 +101,7 @@ const ContactUs = () => {
                     ...commonStyle.inputFieldContactStyle,
                     ...(errors.email && commonStyle.errorContactStyle),
                   }}
-                  {...register("email")}
+           //       {...register("email")}
                   error={errors.email ? true : false}
                 />
                 <FMTypography
@@ -122,7 +122,7 @@ const ContactUs = () => {
                     ...commonStyle.inputFieldContactStyle,
                     ...(errors.mobileNo && commonStyle.errorContactStyle),
                   }}
-                  {...register("mobileNo")}
+           //       {...register("mobileNo")}
                   error={errors.mobileNo ? true : false}
                 />
                 <FMTypography
@@ -143,7 +143,7 @@ const ContactUs = () => {
                     ...commonStyle.inputFieldContactStyle,
                     ...(errors.subject && commonStyle.errorContactStyle),
                   }}
-                  {...register("subject")}
+           //       {...register("subject")}
                   error={errors.subject ? true : false}
                 />
                 <FMTypography
@@ -168,7 +168,7 @@ const ContactUs = () => {
                     border: "1px solid #E6E6E6",
                     borderRadius: "10px",
                   }}
-                  {...register("message")}
+           //       {...register("message")}
                   error={errors.description ? true : false}
                 />
                 <FMTypography
@@ -192,9 +192,7 @@ const ContactUs = () => {
                     background: "#C02222",
                     width: "125px",
                     height: "52px",
-
                     borderRadius: "10px",
-
                     /* identical to box height */
                     color: "#FFFFFF",
                     "&:hover": {
