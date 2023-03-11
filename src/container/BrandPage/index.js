@@ -75,12 +75,12 @@ const BrandPage = () => {
             <Box onClick={() => onCardClick(elem)}>
               <Card sx={{ width: "317", borderRadius: "20px" }}>
                 <CardActionArea>
-                <div class="zoomin">
+                <Box class="zoomin">
                     <img
                       src={elem?.img}
                       alt="img"
                     />
-                  </div>
+                  </Box>
                   {/* <CardMedia
                     component="img"
                     sx={{
