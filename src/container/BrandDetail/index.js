@@ -37,7 +37,6 @@ const BrandPage = () => {
       <Grid sx={{ padding: "0px 50px" }}>
         {/* product box below */}
         <div
-          className=""
           style={{
             borderRadius: "20px",
           }}

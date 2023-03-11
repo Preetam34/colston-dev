@@ -34,6 +34,7 @@ const style = {
   borderRadius: "20px",
 };
 
+
 export default function Form({ open, handleClose }) {
   const [passwordType, setPasswordType] = useState(true);
 

@@ -33,6 +33,7 @@ function FMOutlinedInput({
           ...commonStyle.inputFieldStyle,
           ...commonStyle.paddingZero,
           ...(errors[errorKey] && commonStyle.errorStyle),
+          
         }}
         {...register}
         error={error}

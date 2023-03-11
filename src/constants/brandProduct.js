@@ -33,5 +33,6 @@ export default {
       description:
         "Colston ensures maximum transparency with the audience. We never deal with sugarcoated promises. Selling the product isn’t the priority for our business culture but consumer satisfaction makes us superior. Colston Care is the department established within the company that provides support to the clients and other enthusiasts for the brand. Keeping the vision ahead we have ensured a smooth process for everyone that is concluded as initial interaction that begins with the dealership than by our own sales coordinators and so on. It makes the deal fruitful for everyone. Just to strengthen the whole process colston conclaves the board from time to time for encountering the issues that occurred throughout.",
     },
+
   ],
 };

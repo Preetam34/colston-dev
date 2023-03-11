@@ -26,7 +26,7 @@ const BrandPage = () => {
 
   const onCardClick = (element) => {
     let pId = element?._id;
-    navigate(`/brand-page/${pId}`);
+   navigate(`/brand-page/${pId}`);
   };
 
   return (
@@ -108,7 +108,7 @@ const BrandPage = () => {
                     >
                       {elem?.name}
                       <Link
-                        to={`brand-page/${elem?._id}`}
+                        // to={`brand-page/${elem?._id}`}
                         style={{ paddingLeft: "12px" }}
                       >
                         <img src={Vector} alt="" />

@@ -29,6 +29,13 @@ export const commonStyle = {
     display: "flex",
     flexDirection: "column",
   },
+
+
+
+
+
+
+
   inputFieldStyle: {
     width: "265px",
     height: "52px",
@@ -57,6 +64,7 @@ export const commonStyle = {
       opacity: "1",
     },
   },
+
   errorStyle: {
     border: "0.125rem solid red",
 
@@ -71,6 +79,57 @@ export const commonStyle = {
     fontSize: "0.875rem",
     paddingBottom: "30px",
   },
+
+
+
+
+  inputFieldContactStyle: {
+    width: "265px",
+    height: "52px",
+    border: "1px solid #E6E6E6",
+    borderRadius: "10px",
+    color: "black",
+    fontFamily: "Montserrat",
+    fontStyle: "normal",
+    fontWeight: "400",
+    paddingLeft: "20px",
+    fontSize: "16px",
+    "& .MuiOutlinedInput-notchedOutline": {
+      border: "none",
+      color: "black",
+    },
+    "&::placeholder": {
+      fontFamily: "Montserrat",
+      fontStyle: "normal",
+      fontWeight: "400",
+      fontSize: "16px",
+      lineHeight: "20px",
+      paddingLeft: "20px",
+      /* identical to box height */
+      color: "#717171",
+      opacity: "1",
+    },
+  },
+
+  errorContactStyle: {
+    border: "0.125rem solid red",
+
+    "&:hover": {
+      border: "0.125rem solid red",
+    },
+  },
+  errorContactText: {
+    width: "100%",
+    color: "red",
+    paddingTop: "10px",
+    fontSize: "0.875rem",
+  },
+
+
+
+
+
+
 
   paddingZero: {
     padding: 0,

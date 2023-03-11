@@ -10,6 +10,5 @@ export const BRAND_PAGE = "/brand-page";
 export const BRAND_PAGE_ID = "/brand-page/:id";
 
 export const PRIVACY_POLICY = "/privacy-policy";
-
-
-
+export const CONTACT_US = "/contact-us";
+export const CAREER = "/career";

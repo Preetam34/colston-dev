@@ -16,11 +16,14 @@ import {
   PRODUCT_PAGE,
   PRODUCT_DETAIL,
   BRAND_PAGE,
-  BRAND_PAGE_ID
+  BRAND_PAGE_ID,
+  CONTACT_US,
 } from "Routes/Routes";
 import ProductDetail from "container/ProductDetail/ProductDetail";
 import BrandPage from "container/BrandPage";
-import BrandDetail from "container/BrandDetail"
+import BrandDetail from "container/BrandDetail";
+import ContactUs from "container/ContactUs";
+
 const App = () => {
   return (
     <>
@@ -53,6 +56,11 @@ const App = () => {
             <Route
               path={BRAND_PAGE_ID}
               element={<PrivateRoutes Component={BrandDetail} />}
+            />
+
+            <Route
+              path={CONTACT_US}
+              element={<PrivateRoutes Component={ContactUs} />}
             />
 
             <Route path="*" element={<p>There's nothing here: 404!</p>} />
