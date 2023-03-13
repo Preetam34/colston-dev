@@ -1,7 +1,6 @@
 import React from "react";
 import Banner from "../components/HomePage/Banner";
 import Header from "components/SearchBar/Header";
-import Faucet from "../assets/homepage/Faucet.svg";
 import { Row, Col, Container } from "react-bootstrap";
 import FMButton from "components/FMButton/FMButton";
 import FaucetsText from "assets/homepage/FaucetText.png";
