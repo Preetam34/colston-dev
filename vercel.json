@@ -1,6 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/contact-us", "destination": "https://frontend-repo-col.vercel.app/contact-us" },
-    { "source": "/privacy-policy", "destination": "/privacy-policy.html" }
-  ]
-}
