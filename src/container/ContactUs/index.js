@@ -8,10 +8,11 @@ import { commonStyle } from "Styles/commonStyles";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { contactFormSchema } from "validationSchema/contactFormSchema";
-import { notify } from "components/FMToaster/FMToaster";
-import Cross from "../../assets/ProductPage/Vector.png";
 import { Row, Col, Container } from "react-bootstrap";
 import Header from "components/SearchBar/Header";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 const style = {
   bgcolor: "background.paper",
@@ -20,6 +21,7 @@ const style = {
 };
 
 const ContactUs = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -30,6 +32,10 @@ const ContactUs = () => {
   });
   const onSubmit = (data) => {
     console.log("form submit");
+    toast("form submited successfully redirect to homepage");
+    setTimeout(() => {
+      navigate("/");
+    }, 5000);
   };
 
   return (
@@ -80,7 +86,7 @@ const ContactUs = () => {
                     ...commonStyle.inputFieldContactStyle,
                     ...(errors.name && commonStyle.errorContactStyle),
                   }}
-                {...register("name")}
+                  {...register("name")}
                   error={errors.name ? true : false}
                 />
                 <FMTypography
@@ -101,7 +107,7 @@ const ContactUs = () => {
                     ...commonStyle.inputFieldContactStyle,
                     ...(errors.email && commonStyle.errorContactStyle),
                   }}
-                {...register("email")}
+                  {...register("email")}
                   error={errors.email ? true : false}
                 />
                 <FMTypography
@@ -168,7 +174,7 @@ const ContactUs = () => {
                     border: "1px solid #E6E6E6",
                     borderRadius: "10px",
                   }}
-                 {...register("message")}
+                  {...register("message")}
                   error={errors.description ? true : false}
                 />
                 <FMTypography
@@ -204,6 +210,7 @@ const ContactUs = () => {
                   onClick={handleSubmit(onSubmit)}
                 />
               </Col>
+              <ToastContainer />
             </Row>
           </Box>
         </Container>

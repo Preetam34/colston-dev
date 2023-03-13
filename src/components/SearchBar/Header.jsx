@@ -67,6 +67,9 @@ const Header = () => {
   const onCardClick = () => {
     navigate(`/brand-page`);
   };
+  const onContactClick = () => {
+    navigate(`/contact-us`);
+  };
 
   return (
     <>
@@ -116,6 +119,7 @@ const Header = () => {
               <FMButton
                 displayText={"Book an appointment"}
                 variant={"outlined"}
+                onClick={() => onContactClick()}    
                 styleData={{
                   fontFamily: "Montserrat",
                   fontWeight: "400",

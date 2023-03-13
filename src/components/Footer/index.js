@@ -127,7 +127,7 @@ const Footer = () => {
             <a href="/">
               <div className="footer-title">Legal</div>
             </a>
-            <a href="/">
+            <a href="/privacy-policy">
               <div className="footer-content">Privacy Policy</div>
             </a>
             <a href="/">
