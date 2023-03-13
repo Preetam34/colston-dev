@@ -1,21 +1,6 @@
 {
   "rewrites": [
     { "source": "/contact-us", "destination": "https://frontend-repo-col.vercel.app/contact-us" },
-    { "source": "/resize/:width/:height", "destination": "https://frontend-repo-col.vercel.app/" },
-    {
-      "source": "/proxy/:match*",
-      "destination": "https://example.com/:match*"
-    },
-    {
-      "source": "/:path((?!uk/).*)",
-      "has": [
-        {
-          "type": "header",
-          "key": "x-vercel-ip-country",
-          "value": "GB"
-        }
-      ],
-      "destination": "/uk/:path*"
-    }
+    { "source": "/privacy-policy", "destination": "/privacy-policy.html" }
   ]
 }
