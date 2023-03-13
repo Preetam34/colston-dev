@@ -7,6 +7,7 @@ export const getMenuBarList = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       const response = await axiosInstance.get(`api/category/getcategory`);
+      console.log("response",response.data)
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue({ error: error });

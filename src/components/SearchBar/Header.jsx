@@ -31,6 +31,7 @@ import SearchIcon from "../../assets/SearchIcon.svg";
 import { getMenuBarList } from "Redux/Slices/HeaderMenuList/HeaderMenuListSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { LANDING_PAGE } from "Routes/Routes";
+import menubarList from "constants/menubarList";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -50,9 +51,11 @@ const Header = () => {
     dispatch(getMenuBarList());
   }, [dispatch]);
 
-  const accountDetailData = useSelector(
-    (state) => state?.menuList?.getMenuOptionsData?.categoryList
-  );
+  // const accountDetailData = useSelector(
+  //   (state) => state?.menuList?.getMenuOptionsData?.categoryList
+  // );
+
+  const accountDetailData = menubarList.categoryList;
 
   const [show, setShow] = useState("");
   const showDropdown = (id) => {
@@ -60,6 +63,9 @@ const Header = () => {
   };
   const hideDropdown = () => {
     setShow("");
+  };
+  const onCardClick = () => {
+    navigate(`/brand-page`);
   };
 
   return (
@@ -159,13 +165,13 @@ const Header = () => {
                         return (
                           <NavDropdown
                             title={elem?.name}
+                            onClick={() => onCardClick()}                   
                             key={elem?.id}
-                            id="navbarScrollingDropdown"
-                            onMouseEnter={() => showDropdown(elem?._id)}
+                            id="navbarScrollingDropdown" onMouseEnter=
+                            {() => showDropdown(elem?._id)}
                             onMouseLeave={hideDropdown}
-                            show={show === elem?._id}
-                          >
-                            <Row
+                            show={show === elem?._id}>
+                            {/* <Row
                               className="rowOnHover"
                               style={{ padding: "2rem" }}
                             >
@@ -191,11 +197,11 @@ const Header = () => {
                                       className="img-fluid"
                                       alt=""
                                     />
-                                    {/* <h4>Cakes</h4> */}
+                                 <h4>Cakes</h4> 
                                   </a>
                                 </div>
                               </Col>
-                            </Row>
+                            </Row> */}
                           </NavDropdown>
                         );
                       })}

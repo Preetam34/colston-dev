@@ -30,7 +30,10 @@ import BasinSanitarywares from "assets/homepage/BasinSanitarywares.png";
 
 import Footer from "components/Footer";
 
+import { useNavigate } from "react-router-dom";
+
 const LandingPage = () => {
+  const navigate = useNavigate();
   function reveal() {
     var reveals = document.querySelectorAll(".reveal");
 
@@ -49,6 +52,9 @@ const LandingPage = () => {
 
   window.addEventListener("scroll", reveal);
 
+  const onCatClick = (FaucetsText) => {
+    navigate(`/product-page/${FaucetsText}`);
+  };
   return (
     <>
       <Header />
@@ -111,7 +117,7 @@ const LandingPage = () => {
       </Grid> */}
 
       <section style={{ marginTop: "80px" }}>
-        <div class="container reveal">
+        <div class="container reveal" onClick={() => onCatClick("Faucets")}>
           <Row class="text-container">
             <Col class="text-box">
               <img src={FaucetImage} alt="" />
@@ -152,7 +158,7 @@ const LandingPage = () => {
       </section>
 
       <section style={{ marginTop: "80px" }}>
-        <div class="container reveal">
+        <div class="container reveal" onClick={() => onCatClick("Wellness")}>
           <Row class="text-container">
             <Col
               class="text-box"
@@ -193,7 +199,7 @@ const LandingPage = () => {
       </section>
 
       <section style={{ marginTop: "80px" }}>
-        <div class="container reveal">
+        <div class="container reveal" onClick={() => onCatClick("Showers")}>
           <Row class="text-container">
             <Col class="text-box">
               <img src={ShowersImage} alt="" />
@@ -234,7 +240,7 @@ const LandingPage = () => {
       </section>
 
       <section style={{ marginTop: "80px", marginBottom: "80px" }}>
-        <div class="container reveal">
+        <div class="container reveal" onClick={() => onCatClick("Basins")}>
           <Row class="text-container">
             <Col
               class="text-box"
@@ -287,8 +293,12 @@ const LandingPage = () => {
       <div>
         <Container fluid>
           <Row style={{ margin: "0", marginTop: "80px" }}>
-            <Col style={{display:"flex",justifyContent:'center'}}>
-              <img src={DisplayBanner} alt="" style={{width: "1340px",height: "494px"}}/>
+            <Col style={{ display: "flex", justifyContent: "center" }}>
+              <img
+                src={DisplayBanner}
+                alt=""
+                style={{ width: "1340px", height: "494px" }}
+              />
             </Col>
           </Row>
         </Container>
@@ -297,7 +307,7 @@ const LandingPage = () => {
       <div className="shopbyocca">
         <Container fluid>
           <Row style={{ margin: "0", marginTop: "80px" }}>
-            <Col md={12} >
+            <Col md={12}>
               <div className="heading_text">
                 <h3>Explore Categories</h3>
               </div>
@@ -509,7 +519,7 @@ const LandingPage = () => {
           </Row>
         </Container>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

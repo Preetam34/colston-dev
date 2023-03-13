@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
-  Avatar,
   Box,
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
   Grid,
-  InputBase,
-  Stack,
-  TextField,
   Typography,
 } from "@mui/material";
 import ImageGallery from "react-image-gallery";
@@ -19,6 +11,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
+
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import moment from "moment";
@@ -38,10 +31,12 @@ import productDetail from "../../constants/productDetail";
 import SimilarProduct from "./SimilarProduct";
 import Footer from "../../components/Footer";
 import Form from "./Form";
+
+
 const ProductDetail = () => {
   const dispatch = useDispatch();
   const params = useParams();
-  //  const { pId } = params;
+    const { id } = params;
 
   const [open, setOpen] = useState(false);
 
@@ -64,9 +59,12 @@ const ProductDetail = () => {
 
   const navigate = useNavigate();
 
-  const product = productDetail.products;
+//  const product = productDetail.products;
 
-  console.log("p", productDetail.products.name);
+
+  const product = products.products.find((item) => item._id == id)
+
+  console.log("p", product.name);
 
   const productDetailedData = products.products;
 
@@ -117,16 +115,8 @@ const ProductDetail = () => {
     },
   };
 
-  //console.log(get(productDetail.products, 'name'))
-  const onCardClick = (element) => {
-    let pId = element?._id;
-    navigate(`/product-detail/${pId}`);
-  };
-
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
-
 
 
   return (
@@ -417,7 +407,7 @@ const ProductDetail = () => {
       {/* moere suggestions */}
       <SimilarProduct />
 
-      <Form open={open} handleClose={handleClose} />
+      <Form open={open} handleClose={handleClose} setOpen={setOpen} />
 
       <Footer />
     </>

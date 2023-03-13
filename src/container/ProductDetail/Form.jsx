@@ -21,9 +21,12 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { enquiryFormSchema } from "validationSchema/enquiryFormSchema";
 import FMInputLabel from "components/FMInputLabel/FMInputLabel";
-import { notify } from "components/FMToaster/FMToaster";
+//import { notify } from "components/FMToaster/FMToaster";
 import Cross from "../../assets/ProductPage/Vector.png";
 import { Row, Col, Container } from "react-bootstrap";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const style = {
   position: "absolute",
@@ -34,8 +37,7 @@ const style = {
   borderRadius: "20px",
 };
 
-
-export default function Form({ open, handleClose }) {
+export default function Form({ open, handleClose, setOpen }) {
   const [passwordType, setPasswordType] = useState(true);
 
   const {
@@ -53,6 +55,10 @@ export default function Form({ open, handleClose }) {
 
   const onSubmit = (data) => {
     console.log("form submit");
+    toast("form submited successfully");
+    setTimeout(() => {
+      setOpen(false);
+    }, 5000);
   };
 
   return (
@@ -223,6 +229,7 @@ export default function Form({ open, handleClose }) {
                       onClick={handleSubmit(onSubmit)}
                     />
                   </Col>
+                  <ToastContainer />
                 </Row>
               </Box>
             </Container>

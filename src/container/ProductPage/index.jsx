@@ -14,7 +14,7 @@ import {
 import FMTypography from "components/FMTypography/FMTypography";
 
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 
 import WaterPool from "../../assets/ProductPage/WaterPool.png";
 import Amora from "../../assets/ProductPage/Amora.png";
@@ -29,13 +29,17 @@ import "./productPage.css";
 const ProductPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const params = useParams();
+  const { name } = params;
 
   const productPageData = products.products;
 
+  
   const onCardClick = (element) => {
-    let pId = element?._id;
-    navigate(`/product-detail/${pId}`);
+    let id = element?._id;
+    navigate(`/product-detail/${id}`);
   };
+
 
   return (
     <>
@@ -48,7 +52,7 @@ const ProductPage = () => {
         }}
       >
         <FMTypography
-          displayText={"Water Whirlphool"}
+          displayText={name}
           styleData={{
             fontWeight: "600",
             fontSize: "40px",

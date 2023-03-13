@@ -8,7 +8,7 @@ import FMTypography from "components/FMTypography/FMTypography";
 import { useNavigate } from "react-router-dom";
 import "./BrandDetail.css";
 import brandDetail from "constants/brandDetail";
-
+import Footer from "components/Footer";
 const BrandPage = () => {
   const navigate = useNavigate();
   const brandColstonDetail = brandDetail.products;
@@ -75,6 +75,7 @@ const BrandPage = () => {
           </p>
         </Box>
       </Grid>
+      <Footer />
     </>
   );
 };

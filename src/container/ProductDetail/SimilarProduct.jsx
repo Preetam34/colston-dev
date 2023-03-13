@@ -4,6 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Data from "../../JsonDatas/JsonData";
 import { Grid } from "@mui/material";
 import FMTypography from "components/FMTypography/FMTypography";
+
 const SimilarProduct = () => {
   const [idata, setIdata] = useState(Data);
 
@@ -48,7 +49,7 @@ const SimilarProduct = () => {
                         alt=""
                       />
                       <div className="card_name">
-                        <h4>Single Lever Basin Mixer</h4>
+                        <h4>{idata.title}</h4>
                       </div>
                     </a>
                   </div>

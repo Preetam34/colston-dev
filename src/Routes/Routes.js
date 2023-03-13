@@ -2,8 +2,8 @@
 export const ROOT = "/";
 export const LANDING_PAGE = "/";
 export const TEST = "/test";
-export const PRODUCT_PAGE = "product-page";
-export const PRODUCT_DETAIL = "product-detail";
+export const PRODUCT_PAGE = "product-page/:name";
+export const PRODUCT_DETAIL = "product-detail/:id";
 
 export const BRAND_PAGE = "/brand-page";
 

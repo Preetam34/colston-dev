@@ -16,7 +16,7 @@ import brandProduct from "../../constants/brandProduct";
 import brandColston from "../../assets/brandColston/BrandColston.png";
 import Vector from "../../assets/brandColston/Vector1.png";
 import "./BrandPage.css";
-
+import Footer from "components/Footer";
 const BrandPage = () => {
   const navigate = useNavigate();
   const brandColstonDetail = brandProduct.brandColston;
@@ -132,6 +132,7 @@ const BrandPage = () => {
           {/* prodct box ended */}
         </Grid>
       </Grid>
+      <Footer />
     </>
   );
 };
