@@ -1,15 +1,3 @@
-// {
-//     "routes": [
-//       { "src": "/", "dest": "/" },
-//       { "src": "/product-page/:name", "dest": "/product-page/:name" },
-//       { "src": "/product-detail/:id", "dest": "/product-detail/:id" },
-//       { "src": "/brand-page", "dest": "/brand-page" },
-//       { "src": "/brand-page/:id", "dest": "/brand-page/:id" },
-//       { "src": "/privacy-policy", "dest":"/privacy-policy" },
-//       { "src": "/contact-us", "dest": "/contact-us" }
-//     ]
-//   }
-
   {
     "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }]
   }
